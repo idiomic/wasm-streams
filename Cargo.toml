@@ -13,8 +13,10 @@ exclude = [
     ".github/"
 ]
 
+# Changed from ["cdylib", "rlib"] to just ["rlib"] to fix cross-compilation
+# The cdylib type causes linker errors when cross-compiling for non-wasm targets
 [lib]
-crate-type = ["cdylib", "rlib"]
+crate-type = ["rlib"]
 
 [dependencies]
 js-sys = "^0.3.72"
